@@ -92,20 +92,33 @@ function lerVariaveis() {
     }
 }
 
-
-
 // 8) Escreva um algoritmo que leia três valores inteiros e diferentes e mostre-os em ordem decrescente. 
 function ordenarDecrescente() {
-
+    let a = parseInt(prompt("Digite o primeiro número inteiro:"));
+    let b = parseInt(prompt("Digite o segundo número inteiro:"));
+    let c = parseInt(prompt("Digite o terceiro número inteiro:"));
+    let numeros = [a, b, c];
+    numeros.sort(function(a, b) {
+        return b - a;
+    });
+    alert("Os números em ordem decrescente são: " + numeros.join(", "));
 }
-
-
 
 // 9) Tendo como dados de entrada a altura e o sexo de uma pessoa, construa um algoritmo que calcule seu peso ideal, utilizando as seguintes fórmulas: 
 // ● para homens: (72.7 * h) – 58; 
 // ● para mulheres: (62.1 * h) – 44.7. 
 function pesoIdeal() {
+    let altura = parseFloat(prompt("Digite sua altura em metros (ex: 1.75):"));
+    let sexo = String(prompt("Digite seu sexo (M/F):")).toUpperCase();
+    let pesoIdeal;
 
+    if (sexo === "M") {
+        pesoIdeal = (72.7 * altura) - 58;
+    } else if (sexo === "F") {
+        pesoIdeal = (62.1 * altura) - 44.7;
+    }
+
+    alert("Seu peso ideal é: " + pesoIdeal.toFixed(2) + " kg");
 }
 
 
@@ -122,7 +135,7 @@ function descobrirImc() {
 
 
 
-// 11) Elabore um algoritmo que calcule o que deve ser pago por um produto, considerando o preço normal deetiqueta e a escolha da condição de pagamento. Utilize os códigos da tabela a seguir para ler qual acondição de pagamento escolhida e efetuar o cálculo adequado. 
+// 11) Elabore um algoritmo que calcule o que deve ser pago por um produto, considerando o preço normal de etiqueta e a escolha da condição de pagamento. Utilize os códigos da tabela a seguir para ler qual acondição de pagamento escolhida e efetuar o cálculo adequado. 
 // Código Condição de pagamento
 // 1 À vista em dinheiro ou cheque, recebe 10% de desconto
 // 2 À vista no cartão de crédito, recebe 15% de desconto
