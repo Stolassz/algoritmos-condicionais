@@ -39,12 +39,18 @@ function imparPar() {
     }
 }
 
-
-
 // 4) Faça um algoritmo que leia dois valores inteiros A e B se os valores forem iguais deverá se somar os dois, caso contrário multiplique A por B. Ao final de qualquer um dos cálculos deve-se atribuir o resultado para uma variável C e mostrar seu conteúdo na tela.
-
-
-
+function valoresIguais() {
+    let a = parseInt(prompt("Digite um número inteiro A:"));
+    let b = parseInt(prompt("Digite um número inteiro B:"));
+    if (a === b) {
+        let c = a + b;
+        alert("A soma de A + B é: " + c);
+    } else {
+        let c = a * b;
+        alert("A multiplicação de A * B é: " + c);
+    }
+}
 
 // 5) Encontrar o dobro de um número caso ele seja positivo e o seu triplo caso seja negativo,imprimindo o resultado. 
 function valorPositivoNegativo() {
