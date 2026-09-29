@@ -12,45 +12,71 @@ function somaMaior() {
 }
 
 // 2) Faça um algoritmo que leia o nome, o sexo e o estado civil de uma pessoa. Caso sexo seja “F” e estado civil seja “CASADA”, solicitar o tempo de casada (anos). 
-
-
-
-
+function tempoCasamento() {
+    let nome = String(prompt("Digite seu nome:")).toUpperCase();
+    let sexo = String(prompt("Digite seu sexo (M/F):")).toUpperCase();
+    let estadoCivil = String(prompt("Digite seu estado civil (SOLTEIRO/A, CASADO/A, DIVORCIADO/A, VIÚVO/A):")).toUpperCase();
+    if (sexo === "F" && estadoCivil === "CASADA") {
+        let tempoCasamento = Number(prompt("Digite o tempo de casamento (anos):"));
+        alert(`
+            =====================
+            Nome: ${nome},
+            Sexo: ${sexo},
+            Estado Civil: ${estadoCivil},
+            Tempo de Casamento: ${tempoCasamento} anos.
+            =====================
+        `);
+    }
+}
 
 // 3) Faça um algoritmo para receber um número qualquer e informar na tela se é par ou ímpar. 
-
+function imparPar() {
+    
+}
 
 
 
 // 4) Faça um algoritmo que leia dois valores inteiros A e B se os valores forem iguais deverá se somar os dois, caso contrário multiplique A por B. Ao final de qualquer um dos cálculos deve-se atribuir o resultado para uma variável C e mostrar seu conteúdo na tela.
+function valoresIguais() {
 
+}
 
 
 
 // 5) Encontrar o dobro de um número caso ele seja positivo e o seu triplo caso seja negativo,imprimindo o resultado. 
+function valorPositivoNegativo() {
 
+}
 
 
 
 // 6) Escreva um algoritmo que lê dois valores booleanos (lógicos) e então determina se ambos são VERDADEIROS ou FALSOS.
+function valorBooleano() {
 
+}
 
 
 
 // 7) Faça um algoritmo que leia uma variável e some 5 caso seja par ou some 8 caso seja ímpar, imprimir o resultado desta operação. 
+function lerVariaveis() {
 
+}
 
 
 
 // 8) Escreva um algoritmo que leia três valores inteiros e diferentes e mostre-os em ordem decrescente. 
+function ordenarDecrescente() {
 
+}
 
 
 
 // 9) Tendo como dados de entrada a altura e o sexo de uma pessoa, construa um algoritmo que calcule seu peso ideal, utilizando as seguintes fórmulas: 
 // ● para homens: (72.7 * h) – 58; 
 // ● para mulheres: (62.1 * h) – 44.7. 
+function pesoIdeal() {
 
+}
 
 
 
@@ -60,7 +86,9 @@ function somaMaior() {
 // Entre 18,5 e 25 Peso normal
 // Entre 25 e 30 Acima do peso
 // Acima de 30 obeso
+function descobrirImc() {
 
+}
 
 
 
@@ -70,7 +98,9 @@ function somaMaior() {
 // 2 À vista no cartão de crédito, recebe 15% de desconto
 // 3 Em duas vezes, preço normal de etiqueta sem juros
 // 4 Em duas vezes, preço normal de etiqueta mais juros de 10% 
+function verDesconto() {
 
+}
 
 
 
@@ -83,4 +113,6 @@ function somaMaior() {
 // >= 60 e < 75 C
 // >= 40 e < 60 D
 // < 40 E 
+function verificarMedia() {
 
+}
