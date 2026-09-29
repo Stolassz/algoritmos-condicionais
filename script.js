@@ -66,18 +66,30 @@ function valorPositivoNegativo() {
     }
 }
 
-
-
 // 6) Escreva um algoritmo que lê dois valores booleanos (lógicos) e então determina se ambos são VERDADEIROS ou FALSOS.
 function valorBooleano() {
+    let valor1 = Boolean(prompt("Digite o primeiro valor booleano (true/false):") === "true");
+    let valor2 = Boolean(prompt("Digite o segundo valor booleano (true/false):") === "true");
 
+    if (valor1 && valor2) {
+        alert("Ambos os valores são VERDADEIROS.");
+    } else if (!valor1 && !valor2) {
+        alert("Ambos os valores são FALSOS.");
+    } else {
+        alert("Os valores são diferentes: um é VERDADEIRO e o outro é FALSO.");
+    }
 }
-
-
 
 // 7) Faça um algoritmo que leia uma variável e some 5 caso seja par ou some 8 caso seja ímpar, imprimir o resultado desta operação. 
 function lerVariaveis() {
-
+    let numero = Number(prompt("Digite um número:"));
+    if (numero % 2 === 0) {
+        let resultado = numero + 5;
+        alert("O número é par. O resultado da soma de " + numero + " + 5 é: " + resultado);
+    } else {
+        let resultado = numero + 8;
+        alert("O número é ímpar. O resultado da soma de " + numero + " + 8 é: " + resultado);
+    }
 }
 
 
