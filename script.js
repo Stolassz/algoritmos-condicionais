@@ -54,7 +54,16 @@ function valoresIguais() {
 
 // 5) Encontrar o dobro de um número caso ele seja positivo e o seu triplo caso seja negativo,imprimindo o resultado. 
 function valorPositivoNegativo() {
-
+    let numero = Number(prompt("Digite um número:"));
+    if (numero > 0) {
+        let dobro = numero * 2;
+        alert("O dobro do número " + numero + " é: " + dobro);
+    } else if (numero < 0) {
+        let triplo = numero * 3;
+        alert("O triplo do número " + numero + " é: " + triplo);
+    } else {
+        alert("O número digitado é zero.");
+    }
 }
 
 
