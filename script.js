@@ -31,15 +31,18 @@ function tempoCasamento() {
 
 // 3) Faça um algoritmo para receber um número qualquer e informar na tela se é par ou ímpar. 
 function imparPar() {
-    
+    let numero = Number(prompt("Digite um número:"));
+    if (numero % 2 === 0) {
+        alert("O número " + numero + " é par.");
+    } else {
+        alert("O número " + numero + " é ímpar.");
+    }
 }
 
 
 
 // 4) Faça um algoritmo que leia dois valores inteiros A e B se os valores forem iguais deverá se somar os dois, caso contrário multiplique A por B. Ao final de qualquer um dos cálculos deve-se atribuir o resultado para uma variável C e mostrar seu conteúdo na tela.
-function valoresIguais() {
 
-}
 
 
 
