@@ -93,15 +93,43 @@ function lerVariaveis() {
 }
 
 // 8) Escreva um algoritmo que leia três valores inteiros e diferentes e mostre-os em ordem decrescente. 
+// Resolução com array
+// function ordenarDecrescente() {
+//     let a = parseInt(prompt("Digite o primeiro número inteiro:"));
+//     let b = parseInt(prompt("Digite o segundo número inteiro:"));
+//     let c = parseInt(prompt("Digite o terceiro número inteiro:"));
+//     let numeros = [a, b, c];
+//     numeros.sort(function(a, b,) {
+//         return b - a;
+//     });
+//     alert("Os números em ordem decrescente são: " + numeros.join(", "));
+// }
+
+// Resolução utilizando condicional
 function ordenarDecrescente() {
-    let a = parseInt(prompt("Digite o primeiro número inteiro:"));
-    let b = parseInt(prompt("Digite o segundo número inteiro:"));
-    let c = parseInt(prompt("Digite o terceiro número inteiro:"));
-    let numeros = [a, b, c];
-    numeros.sort(function(a, b) {
-        return b - a;
-    });
-    alert("Os números em ordem decrescente são: " + numeros.join(", "));
+    let a = parseInt(prompt("Digite o valor de A:"));
+    let b = parseInt(prompt("Digite o valor de B:"));
+    let c = parseInt(prompt("Digite o valor de C:"));
+    
+    if (a > b && a > c) { 
+        if (b > c) {
+            alert(`${a}, ${b}, ${c}`)
+        } else {
+            alert(`${a}, ${c}, ${b}`)
+        }
+    } else if (b > a && b > c) {
+        if (c > a) {
+            alert(`${b}, ${c}, ${a}`)
+        } else {
+            alert(`${b}, ${a}, ${c}`)
+        }
+    } else {
+        if (b > a) {
+            alert(`${c}, ${b}, ${a}`)
+        } else {
+            alert(`${c}, ${a}, ${b}`)
+        }
+    }
 }
 
 // 9) Tendo como dados de entrada a altura e o sexo de uma pessoa, construa um algoritmo que calcule seu peso ideal, utilizando as seguintes fórmulas: 
