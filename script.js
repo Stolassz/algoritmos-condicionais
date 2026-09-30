@@ -169,17 +169,41 @@ function pesoIdeal() {
 function descobrirImc() {
     let peso = parseFloat(prompt("Digite seu peso em kg (ex: 70.5):"));
     let altura = parseFloat(prompt("Digite sua altura em metros (ex: 1.75):"));
-    let imc = peso / (altura * altura);
+    const imc = peso / (altura * altura);  // ou (altura ** 2)
 
-    if (imc < 18.5) {
-        alert("Seu IMC é: " + imc.toFixed(2) + " - Abaixo do peso");
-    } else if (imc >= 18.5 && imc < 25) {
-        alert("Seu IMC é: " + imc.toFixed(2) + " - Peso normal");
-    } else if (imc >= 25 && imc < 30) {
-        alert("Seu IMC é: " + imc.toFixed(2) + " - Acima do peso");
-    } else {
-        alert("Seu IMC é: " + imc.toFixed(2) + " - Obeso");
+    // if (imc < 18.5) {
+    //     alert("Seu IMC é: " + imc.toFixed(2) + " - Abaixo do peso");
+    // } else if (imc >= 18.5 && imc < 25) {
+    //     alert("Seu IMC é: " + imc.toFixed(2) + " - Peso normal");
+    // } else if (imc >= 25 && imc < 30) {
+    //     alert("Seu IMC é: " + imc.toFixed(2) + " - Acima do peso");
+    // } else {
+    //     alert("Seu IMC é: " + imc.toFixed(2) + " - Obeso");
+    // }
+
+    let condicao;
+
+    switch(true) {
+        case imc < 18.5:    
+            condicao = "Abaixo do Peso";
+            break;
+        case imc >= 18.5 && imc < 25:
+            condicao = "Peso ideal";
+            break;
+        case imc >= 25 && imc < 30:
+            condicao = "Acima do peso";
+            break;
+        case imc >= 30:
+            condicao = "Obesidade"
+            break;
+        default:
+            alert("Dados inválidos.")
+        return;
     }
+    alert(`
+        IMC: ${imc.toFixed(2)}
+        Condição: ${condicao}
+        `)
 }
 
 // 11) Elabore um algoritmo que calcule o que deve ser pago por um produto, considerando o preço normal de etiqueta e a escolha da condição de pagamento. Utilize os códigos da tabela a seguir para ler qual acondição de pagamento escolhida e efetuar o cálculo adequado. 
