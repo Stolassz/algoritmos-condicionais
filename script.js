@@ -140,12 +140,23 @@ function pesoIdeal() {
     let sexo = String(prompt("Digite seu sexo (M/F):")).toUpperCase();
     let pesoIdeal;
 
-    if (sexo === "M") {
-        pesoIdeal = (72.7 * altura) - 58;
-    } else if (sexo === "F") {
-        pesoIdeal = (62.1 * altura) - 44.7;
-    }
+    // if (sexo === "M") {
+    //     pesoIdeal = (72.7 * altura) - 58;
+    // } else if (sexo === "F") {
+    //     pesoIdeal = (62.1 * altura) - 44.7;
+    // }
 
+    switch(sexo) {
+        case "M":
+            pesoIdeal = (72.7 * altura) - 58;
+            break;
+        case "F":
+            pesoIdeal = (62.1 * altura) - 44.7;
+            break;
+        default:
+            alert("Informações inválidas");
+            return;   
+    }
     alert("Seu peso ideal é: " + pesoIdeal.toFixed(2) + " kg");
 }
 
@@ -180,7 +191,6 @@ function descobrirImc() {
 function verDesconto() {
     let precoEtiqueta = parseFloat(prompt("Digite o preço normal de etiqueta do produto (ex: 100.00):"));
     let codigoPagamento = parseInt(prompt("Digite o código da condição de pagamento (1-4):"));
-
     let valorFinal;
 
     switch (codigoPagamento) {
