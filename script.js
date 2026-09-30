@@ -121,8 +121,6 @@ function pesoIdeal() {
     alert("Seu peso ideal é: " + pesoIdeal.toFixed(2) + " kg");
 }
 
-
-
 // 10) O IMC – Indice de Massa Corporal é um critério da Organização Mundial de Saúde para dar uma indicação sobre a condição de peso de uma pessoa adulta. A fórmula é IMC = peso / ( altura ).  Elabore um algoritmo que leia o peso e a altura de um adulto e mostre sua condição de acordo com a tabela abaixo:
 // IMC em adultos Condição
 // Abaixo de 18,5 Abaixo do peso
@@ -130,10 +128,20 @@ function pesoIdeal() {
 // Entre 25 e 30 Acima do peso
 // Acima de 30 obeso
 function descobrirImc() {
+    let peso = parseFloat(prompt("Digite seu peso em kg (ex: 70.5):"));
+    let altura = parseFloat(prompt("Digite sua altura em metros (ex: 1.75):"));
+    let imc = peso / (altura * altura);
 
+    if (imc < 18.5) {
+        alert("Seu IMC é: " + imc.toFixed(2) + " - Abaixo do peso");
+    } else if (imc >= 18.5 && imc < 25) {
+        alert("Seu IMC é: " + imc.toFixed(2) + " - Peso normal");
+    } else if (imc >= 25 && imc < 30) {
+        alert("Seu IMC é: " + imc.toFixed(2) + " - Acima do peso");
+    } else {
+        alert("Seu IMC é: " + imc.toFixed(2) + " - Obeso");
+    }
 }
-
-
 
 // 11) Elabore um algoritmo que calcule o que deve ser pago por um produto, considerando o preço normal de etiqueta e a escolha da condição de pagamento. Utilize os códigos da tabela a seguir para ler qual acondição de pagamento escolhida e efetuar o cálculo adequado. 
 // Código Condição de pagamento
@@ -142,10 +150,31 @@ function descobrirImc() {
 // 3 Em duas vezes, preço normal de etiqueta sem juros
 // 4 Em duas vezes, preço normal de etiqueta mais juros de 10% 
 function verDesconto() {
+    let precoEtiqueta = parseFloat(prompt("Digite o preço normal de etiqueta do produto (ex: 100.00):"));
+    let codigoPagamento = parseInt(prompt("Digite o código da condição de pagamento (1-4):"));
 
+    let valorFinal;
+
+    switch (codigoPagamento) {
+        case 1:
+            valorFinal = precoEtiqueta * 0.9; // 10% de desconto
+            break;
+        case 2:
+            valorFinal = precoEtiqueta * 0.85; // 15% de desconto
+            break;
+        case 3:
+            valorFinal = precoEtiqueta; // preço normal
+            break;
+        case 4:
+            valorFinal = precoEtiqueta * 1.1; // 10% de juros
+            break;
+        default:
+            alert("Código de pagamento inválido.");
+            return;
+    }
+
+    alert("O valor a ser pago é: R$ " + valorFinal.toFixed(2));
 }
-
-
 
 // 12) Escreva um algoritmo que leia o número de identificação, as 3 notas obtidas por um aluno nas 3 verificações e a média dos exercícios que fazem parte da avaliação, e calcule a média de aproveitamento, usando a fórmula:
 // MA := (nota1 + nota 2 * 2 + nota 3 * 3 + ME)/7 
@@ -157,5 +186,28 @@ function verDesconto() {
 // >= 40 e < 60 D
 // < 40 E 
 function verificarMedia() {
+    let numeroIdentificacao = prompt("Digite o número de identificação do aluno:");
+    let nota1 = parseFloat(prompt("Digite a primeira nota (ex: 8.5):"));
+    let nota2 = parseFloat(prompt("Digite a segunda nota (ex: 7.5):"));
+    let nota3 = parseFloat(prompt("Digite a terceira nota (ex: 9.0):"));
+    let me = parseFloat(prompt("Digite a média dos exercícios (ex: 8.0):"));
 
+    let ma = (nota1 + nota2 * 2 + nota3 * 3 + me) / 7;
+    let conceito;
+
+    if (ma >= 90) {
+        conceito = "A";
+    } else if (ma >= 75) {
+        conceito = "B";
+    } else if (ma >= 60) {
+        conceito = "C";
+    } else if (ma >= 40) {
+        conceito = "D";
+    } else {
+        conceito = "E";
+    }
+
+    let mensagem = conceito === "A" || conceito === "B" || conceito === "C" ? "Aprovado" : "Reprovado";
+
+    alert(`Número de identificação: ${numeroIdentificacao}\nNotas: ${nota1}, ${nota2}, ${nota3}\nMédia dos exercícios: ${me.toFixed(2)}\nMédia de aproveitamento: ${ma.toFixed(2)}\nConceito: ${conceito}\nMensagem: ${mensagem}`);
 }
