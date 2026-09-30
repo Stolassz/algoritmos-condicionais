@@ -214,7 +214,13 @@ function descobrirImc() {
 // 4 Em duas vezes, preço normal de etiqueta mais juros de 10% 
 function verDesconto() {
     let precoEtiqueta = parseFloat(prompt("Digite o preço normal de etiqueta do produto (ex: 100.00):"));
-    let codigoPagamento = parseInt(prompt("Digite o código da condição de pagamento (1-4):"));
+    let codigoPagamento = parseInt(prompt(`
+        Digite o código da condição de pagamento:
+        1 - Dinheiro ou cheque (Desconto de 10%)
+        2 - Crédito à vista (Desconto de 15%)
+        3 - 2x sem juros
+        4 - 2x com 10% de juros
+        `));
     let valorFinal;
 
     switch (codigoPagamento) {
@@ -235,7 +241,12 @@ function verDesconto() {
             return;
     }
 
-    alert("O valor a ser pago é: R$ " + valorFinal.toFixed(2));
+    (codigoPagamento >=3) 
+        ? alert(`
+            Duas parcelas de R$ ${(valorFinal / 2).toFixed(2)}
+            Total de: R$ ${valorFinal.toFixed(2)}
+        `)
+        : alert("O valor a ser pago é: R$ " + valorFinal.toFixed(2));
 }
 
 // 12) Escreva um algoritmo que leia o número de identificação, as 3 notas obtidas por um aluno nas 3 verificações e a média dos exercícios que fazem parte da avaliação, e calcule a média de aproveitamento, usando a fórmula:
@@ -254,22 +265,45 @@ function verificarMedia() {
     let nota3 = parseFloat(prompt("Digite a terceira nota (ex: 9.0):"));
     let me = parseFloat(prompt("Digite a média dos exercícios (ex: 8.0):"));
 
-    let ma = (nota1 + nota2 * 2 + nota3 * 3 + me) / 7;
+    let ma = ((nota1 + nota2 * 2 + nota3 * 3 + me) / 7) *10;
     let conceito;
 
-    if (ma >= 90) {
-        conceito = "A";
-    } else if (ma >= 75) {
-        conceito = "B";
-    } else if (ma >= 60) {
-        conceito = "C";
-    } else if (ma >= 40) {
-        conceito = "D";
-    } else {
-        conceito = "E";
+    // if (ma >= 90) {
+    //     conceito = "A";
+    // } else if (ma >= 75) {
+    //     conceito = "B";
+    // } else if (ma >= 60) {
+    //     conceito = "C";
+    // } else if (ma >= 40) {
+    //     conceito = "D";
+    // } else {
+    //     conceito = "E";
+    // }
+
+    switch(true) {
+        case ma >= 90:
+            conceito = "A";
+            break;
+        case ma >= 75 && ma < 90:
+            conceito = "B";
+            break;
+        case ma >= 60 && ma < 75:
+            conceito = "C";
+            break;
+        case ma >= 40 && ma < 60:
+            conceito = "D";
+            break;
+        case ma < 40:
+            conceito = "E";
+        default:
+            alert("Impossível de obter Média de Aproveitamento");
+            return;
     }
 
     let mensagem = conceito === "A" || conceito === "B" || conceito === "C" ? "Aprovado" : "Reprovado";
 
-    alert(`Número de identificação: ${numeroIdentificacao}\nNotas: ${nota1}, ${nota2}, ${nota3}\nMédia dos exercícios: ${me.toFixed(2)}\nMédia de aproveitamento: ${ma.toFixed(2)}\nConceito: ${conceito}\nMensagem: ${mensagem}`);
+    alert(`Número de identificação: ${numeroIdentificacao}\nNotas: 
+        Nota 1: ${nota1} 
+        Nota 2: ${nota2} 
+        Nota 3: ${nota3}\nMédia dos exercícios: ${me.toFixed(2)}\nMédia de aproveitamento: ${ma.toFixed(2)}\nConceito: ${conceito}\nMensagem: ${mensagem}`);
 }
