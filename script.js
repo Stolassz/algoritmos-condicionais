@@ -303,7 +303,7 @@ function verificarMedia() {
     let mensagem = conceito === "A" || conceito === "B" || conceito === "C" ? "Aprovado" : "Reprovado";
 
     alert(`Número de identificação: ${numeroIdentificacao}\nNotas: 
-        Nota 1: ${nota1} 
-        Nota 2: ${nota2} 
-        Nota 3: ${nota3}\nMédia dos exercícios: ${me.toFixed(2)}\nMédia de aproveitamento: ${ma.toFixed(2)}\nConceito: ${conceito}\nMensagem: ${mensagem}`);
+        Nota 1: ${nota1.toFixed(2)} 
+        Nota 2: ${nota2.toFixed(2)} 
+        Nota 3: ${nota3.toFixed(2)}\nMédia dos exercícios: ${me.toFixed(2)}\nMédia de aproveitamento: ${ma.toFixed(2)}\nConceito: ${conceito}\nMensagem: ${mensagem}`);
 }
